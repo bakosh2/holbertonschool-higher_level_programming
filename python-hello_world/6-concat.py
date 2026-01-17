@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Concatenate two strings"""
-str1 = "Welcome to "
-str2 = "Holberton School!"
-print(str1 + str2)
+str1 = "Holberton"
+str2 = "School"
+# YOUR CODE GOES HERE. PLEASE REMOVE THIS LINE
+print(f"Welcome to {str1} {str2}!")
