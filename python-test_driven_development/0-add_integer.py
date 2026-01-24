@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A module to add two numbers (integers or floats)."""
+"""Module to add two numbers (integers or floats)."""
 
 
 def add_integer(a, b=98):
@@ -14,15 +14,17 @@ def add_integer(a, b=98):
 
     Raises:
         TypeError: If a or b are not int or float.
+        OverflowError: If a float cannot be converted to int (inf, -inf, NaN).
     """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
 
-    if isinstance(a, float):
-        a = int(a)
-    if isinstance(b, float):
-        b = int(b)
+    try:
+        a_int = int(a)
+        b_int = int(b)
+    except (OverflowError, ValueError):
+        raise OverflowError("cannot convert float infinity to integer")
 
-    return a + b
+    return a_int + b_int
