@@ -55,4 +55,4 @@ if __name__ == '__main__':
     """Server initialization"""
     server_address = ('', 8000)
     httpserver = http.server.HTTPServer(server_address, HTTPHandler)
-    httpserver.serve_forever()
+    httpserver.serve_forever() 
